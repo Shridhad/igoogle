@@ -1,0 +1,21 @@
+
+@media (max-width: 940px) {
+	
+	div.canvas .canvas-table>div {
+		width: 49%;
+	}
+	
+	.column2 .icons .gadget-setting-list {
+		right: 0;
+	}
+}
+
+@media (max-width: 640px) {
+	div.canvas .canvas-table>div {
+		width: 98%;
+	}
+	
+	.column1 .icons .gadget-setting-list {
+		right: 0;
+	}
+}

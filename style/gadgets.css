@@ -1,0 +1,161 @@
+.gadget-box {
+	border: 1px solid #DCDCDC;
+	margin-right: 10px;
+	border-radius: 10px;
+	background: #FFF;
+}
+
+.gadget-box:hover {
+	border: 1px solid #C6C6C6;
+	-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 2px 4px rgba(0, 0, 0, 0.4);
+	box-shadow:  2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.gadget-title {
+	background: #F5F5F5 url(../images/result.png) 0% 23% no-repeat;
+	padding: 5px;
+	border-bottom: 1px solid #DCDCDC;
+	border-radius: 10px 10px 0 0;
+	cursor: move;
+}
+
+.gadget-box:hover .gadget-title{	
+	background: url(../images/css3-logo.jpg) no-repeat 0%, #d3e5f3; 
+	background: url(../images/css3-logo.jpg) no-repeat 0%, -moz-linear-gradient(top, #d3e5f3 11%, #f9fbfd 80%); 
+	background: url(../images/css3-logo.jpg) no-repeat 0%, -webkit-gradient(linear, left top, left bottom, color-stop(11%,#D3E5F3), color-stop(80%,#F9FBFD));
+	background: url(../images/css3-logo.jpg) no-repeat 0%, -webkit-linear-gradient(top, #d3e5f3 11%,#f9fbfd 80%); 
+	background: url(../images/css3-logo.jpg) no-repeat 0%, -o-linear-gradient(top, #d3e5f3 11%,#f9fbfd 80%); 
+	background: url(../images/css3-logo.jpg) no-repeat 0%, -ms-linear-gradient(top, #d3e5f3 11%,#f9fbfd 80%); 
+	background: url(../images/css3-logo.jpg) no-repeat 0%, linear-gradient(to bottom, #d3e5f3 11%,#f9fbfd 80%); 
+	filter: url(../images/css3-logo.jpg) no-repeat 0%, progid:DXImageTransform.Microsoft.gradient( startColorstr='#d3e5f3', endColorstr='#f9fbfd',GradientType=0 ); 	
+}
+
+.gadget-title .icons {
+	float: right;
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	height: 15px;
+	display: none;
+}
+
+.gadget-title:hover .icons {
+	display: block;
+}
+
+.icons li {
+	float: left;
+	position: relative;
+	cursor: default;
+}
+
+.icons a {
+	height: 15px;
+	display: block;
+	float: left;
+	margin-right: 3px;
+	cursor: pointer;
+}
+
+.icons .gadget-setting-list {
+	position: absolute;
+	top: 15px;
+	background: #FFF;
+	overflow: hidden;
+	border: 1px solid #ADAAAA;
+	border-radius: 0 5px 5px 5px;
+	padding: 5px 5px 5px 0;
+	list-style: none;
+	z-index: 101;
+	display: none;
+	width: 120px;
+	cursor: default;
+}
+
+.icons .gadget-setting-list li {
+	width: 100%;
+	padding-left: 10px;
+	padding-right: 5px;
+}
+
+.icons .gadget-setting-list li:hover {
+	background-color: whitesmoke;
+}
+
+.column3 .icons .gadget-setting-list {
+	right: 0;
+}
+
+.icons .gadget-settings:hover .gadget-setting-list {
+	display: block;
+}
+
+.icons .gadget-setting-list li {
+	clear: both;
+	height: 20px;
+}
+
+.gadget-title .gadget-settings {
+	cursor: pointer;
+	width: 35px;
+	margin-right: 3px;
+	background: url(../images/result.png) 0 71% no-repeat
+}
+
+.gadget-title .minimize {
+	width: 12px;
+	background: url(../images/result.png) 0% 41% no-repeat
+}
+
+.gadget-title .close {
+	width: 15px;
+	background: url(../images/result.png) -3% 84.70% no-repeat
+}
+
+.gadget-title .minimize:hover {
+	background: #07A url(../images/minimize-white.png)
+}
+
+.gadget-title .close:hover {
+	background: #07A url(../images/close-white.png) -50%
+}
+
+.gadget-title h4 {
+	margin: 0px;
+	margin-left: 45px;
+	width: 55%;
+	float: left;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.gadget-content {
+	border-radius: 0 0 10px 10px;
+	background: #FFF; 
+	background: -moz-linear-gradient(top, #FFF 70%, #CDE5FC 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(70%,#FFF), color-stop(100%,#CDE5FC));
+	background: -webkit-linear-gradient(top, #FFF 70%,#CDE5FC 100%);
+	background: -o-linear-gradient(top, #FFF 70%,#CDE5FC 100%); 
+	background: -ms-linear-gradient(top, #FFF 70%,#CDE5FC 100%); 
+	background: linear-gradient(to bottom, #FFF 70%,#CDE5FC 100%); 
+	/* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#CDE5FC', endColorstr='#FFF',GradientType=0 );  */
+}
+
+.gadget-content ul {
+	list-style: url(../images/arrow-right.png);
+	list-style-position: inside;
+	padding-left: 15px;
+	margin: 13px 0px 0px;
+	padding-bottom: 13px;
+}
+
+.gadget-content li {
+	line-height: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}	
+
+

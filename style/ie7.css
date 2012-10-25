@@ -1,0 +1,45 @@
+ul.menulist .more-menu ul {
+	left: -40px;
+}
+
+ul.menulist li.left-menu .google-more {
+	background-position-x: 517%;
+}
+
+#header, .menubar, #footer {
+	left: 0
+}
+
+.theme-menu ul {
+	top: 26px;
+}
+
+.gadget-title {
+	overflow: hidden;
+}
+
+
+.column1 .icons .gadget-setting-list, .column2 .icons .gadget-setting-list {
+	left: -40px;
+}
+
+.column3 .icons .gadget-setting-list {
+	right: 0;
+}
+
+.icons .gadget-setting-list li {
+	float: none;
+}
+
+#header .search-button {
+	margin-left: -50px;
+	margin-top: 1px;
+}
+
+#header .search-text {
+	line-height: 25px;
+}
+
+.gadget-content li {
+	padding-left: 5px;
+}	
