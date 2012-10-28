@@ -1,34 +1,15 @@
-ul.menulist .more-menu ul {
-	left: -40px;
-}
 
 ul.menulist li.left-menu .google-more {
-	background-position-x: 517%;
+	background-position-x: 438%;
 }
 
 #header, .menubar, #footer {
 	left: 0
 }
 
-.theme-menu ul {
-	top: 26px;
-}
-
-.gadget-title {
-	overflow: hidden;
-}
-
-
-.column1 .icons .gadget-setting-list, .column2 .icons .gadget-setting-list {
-	left: -40px;
-}
-
-.column3 .icons .gadget-setting-list {
-	right: 0;
-}
-
-.icons .gadget-setting-list li {
-	float: none;
+#header .search-text {
+	line-height: 25px;
+	margin-left: 0px;
 }
 
 #header .search-button {
@@ -36,10 +17,25 @@ ul.menulist li.left-menu .google-more {
 	margin-top: 1px;
 }
 
-#header .search-text {
-	line-height: 25px;
+div.canvas .canvas-table>div {
+	display: inline;
+	float: left;
+}
+
+.gadget-title {
+	overflow: hidden;
+}
+
+.icons .gadget-setting-list li {
+	float: none;
+}
+
+.gadget-content {
+	background: #FFF url(../images/gradient.png) repeat-x 0 100%;
 }
 
 .gadget-content li {
 	padding-left: 5px;
 }	
+
+

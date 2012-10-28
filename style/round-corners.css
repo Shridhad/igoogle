@@ -1,0 +1,79 @@
+#header .search-round-corners {
+	position: relative;
+	height: 31px;
+	margin-left: 5px;
+}
+
+#header .search-round-corners .left-side {
+	margin-top: -1px;	
+}
+
+#header .search-round-corners .top-left {
+	top: 0;
+	background: url(../images/search-top-left.png);
+}
+
+#header .search-round-corners .bottom-left {
+	bottom: 0;
+	background: url(../images/search-bottom-left.png);
+}
+
+#header .search-round-corners .top-left, #header .search-round-corners .bottom-left {
+	position: absolute;
+	left: 0;
+	height: 5px;
+	width: 5px
+}
+
+#header .search-round-corners .middle-left {
+	position: absolute;
+	width: 5px;
+	top: 5px;
+	bottom: 5px;
+	background: #FFF;
+}
+
+#header .search-round-corners .right-side {
+	position: absolute;
+	height: 31px;
+	right: -5px;
+	top: -2px;
+}
+
+#header .search-round-corners .top-right {
+	top: 0;
+	background: url(../images/search-top-right.png);
+}
+
+#header .search-round-corners .bottom-right {
+	bottom: 0;
+	background: url(../images/search-bottom-right.png);
+}
+
+#header .search-round-corners .top-right, #header .search-round-corners .bottom-right {
+	position: absolute;
+	right: 0;
+	height: 5px;
+	width: 5px;
+}
+
+#header .search-round-corners .middle-right {
+	position: absolute;
+	width: 5px;
+	right: 0;
+	top: 5px;
+	bottom: 5px;
+	background: #4D90FE;
+}
+
+#header .search-round-corners .search-button:hover .middle-right {
+	background-color: #357AE8;
+}
+
+#header .search-round-corners .search-button:hover .top-right {
+	background: url(../images/search-top-right-hover.png);
+}
+
+#header .search-round-corners .search-button:hover .bottom-right {
+	background: url(../images/search-bottom-right-hover.png);
+}

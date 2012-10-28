@@ -39,11 +39,12 @@ div.menubar {
 	margin-top: 27px;
 	padding-bottom: 20px;
 	box-shadow: 0px -1px 5px 7px #999;
+	z-index: 1;
 }
 
 div.content {
 	margin: 10px;
-	padding-bottom: 5%;
+	padding-bottom: 135px;
 	margin-top: 190px;
 }
 
@@ -56,8 +57,6 @@ div.canvas .canvas-table>div {
 	min-width: 300px;
 	padding-bottom: 10px;
 	display: inline-block;
-	*display: inline;
-	*float: left;
 }
 
 #footer {

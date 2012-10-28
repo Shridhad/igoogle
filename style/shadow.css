@@ -1,0 +1,23 @@
+
+.gadget-box .bottom-shadow, .gadget-box .right-shadow {
+	position:  absolute;
+	right: -2px;
+	bottom: -2px;
+	background:  #3C3A3A;
+	display: none;
+	z-index: -1;
+}
+
+.gadget-box .right-shadow {
+	width: 2px;
+	top: 0;
+}
+
+.bottom-shadow {
+	height: 2px;
+	left: 0;
+}
+
+.gadget-box:hover .bottom-shadow, .gadget-box:hover .right-shadow {
+	display: block;
+}

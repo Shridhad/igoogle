@@ -25,6 +25,7 @@ ul.menulist li {
 ul.menulist li.left-menu .google-more {
 	background: url(../images/result.png) 590% -5%  no-repeat;
 	padding-right: 15px;
+	border: 1px solid #2D2D2D;
 }
 
 ul.menulist li.left-menu:hover .google-more {
@@ -46,15 +47,16 @@ li.more-menu {
 	list-style: none;
 	position: absolute;
 	cursor: default;
-	z-index: 100;
 	padding-left: 0px;
 	border-top: none;
 	width: 100px;
 	max-width: 106px;
+	padding-bottom: 6px;
 }
 
 .left-menu ul {
 	top: 17px;
+	left: 0px;
 	border-radius: 0 0 10px 10px
 }
 
@@ -71,7 +73,7 @@ div.menubar .more-menu ul li a {
 }
 
 div.menubar .more-menu ul li.line-break {
-	padding-left: 0px;
+	padding: 0px;
 	background-color: white;
 	width: 100%;
 }
@@ -114,20 +116,19 @@ div.menubar .more-menu ul li.line-break {
 	height: 29px;
 	width: 50%;
 	min-width: 169px;
-	margin-left: 10px;
+	margin-left: 5px;
+	padding: 1px;
 	padding-left: 10px;
 	font: 16px Arial, sans-serif;
 	border: 0px;
 	border-radius: 5px;
 	
-	background: #FFF;
 	background: -moz-linear-gradient(left, #FFF 50%, #4D90FF 87%);
 	background: -webkit-gradient(linear, left top, right top, color-stop(50%,#FFF), color-stop(87%,#4D90FF));
 	background: -webkit-linear-gradient(left, #FFF 50%,#4D90FF 87%);
 	background: -o-linear-gradient(left, #FFF 50%,#4D90FF 87%);
 	background: -ms-linear-gradient(left, #FFF 50%,#4D90FF 87%);
 	background: linear-gradient(to right, #FFF 50%,#4D90FF 87%);
-	/* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF', endColorstr='#4D90FF',GradientType=1 ); */
 	
 	-webkit-transition: all 0.30s ease-in-out;
 	-moz-transition: all 0.30s ease-in-out;
@@ -157,7 +158,6 @@ div.menubar .more-menu ul li.line-break {
 }
 
 #header .search-button:hover {
-	/* border: 1px solid #2F5BB7; */
 	background-color: #357AE8;
 }
 
@@ -174,11 +174,13 @@ div.menubar .more-menu ul li.line-break {
 	position: relative;
 	z-index: 101;
 	border: 1px solid #FFF;
+	border-radius: 5px;
 }
 
 .theme-menu:hover .themes {
 	border:1px solid #94F3EF;
 	border-bottom: none;
+	border-radius: 5px 5px 0 0;
 }
 
 .themes .options-icon {
@@ -195,7 +197,7 @@ div.menubar .more-menu ul li.line-break {
 	max-width: 170px;
 	border-radius: 10px 0 10px 10px;
 	border: 1px solid #94F3EF;
-	top: 12px;
+	top: 25px;
 	color: black;
 	right: 20px;
 }
