@@ -4,12 +4,21 @@
 <html>
 	<head>
 		<title>iGoogle</title>
-		<link type="text/css" rel="stylesheet" href="style/rest.css"/>
+		<link type="text/css" rel="stylesheet" href="style/reset.css"/>
 		<link type="text/css" rel="stylesheet" href="style/layout.css"/>
 		<link type="text/css" rel="stylesheet" href="style/header.css"/>
 		<link type="text/css" rel="stylesheet" href="style/gadgets.css"/>
 		<link type="text/css" rel="stylesheet" href="style/responsive.css"/>
-		<!--[if IE 7]><link rel="stylesheet" href="style/ie7.css" type="text/css"><![endif]-->
+		<!--[if lte IE 8]>
+			<link type="text/css" rel="stylesheet" href="style/round-corners.css"/>
+			<link type="text/css" rel="stylesheet" href="style/shadow.css"/>
+		<![endif]-->
+		<!--[if IE 8]>
+			<link rel="stylesheet" href="style/ie8.css" type="text/css">
+		<![endif]-->
+		<!--[if IE 7]>
+			<link rel="stylesheet" href="style/ie7.css" type="text/css">
+		<![endif]-->
 	</head>
 	
 	<body>
@@ -23,7 +32,7 @@
 					<li><a href="#">Gurgaon</a></li>
 					<li><a href="#">TWI</a></li>
 					<li class="more-menu left-menu">
-						<a href="#" class="google-more" alt="More Options">More</a>
+						<a href="#" class="google-more">More</a>
 						<ul>
 							<li><a href="#">Orkut</a></li>
 							<li><a href="#">Translate</a></li>
@@ -46,8 +55,21 @@
 
 					<div class="search-bar">
 						<form action="#" name="search-form" class="search-form">
-							<input type="text" class="search-text" name="search-text" placeholder="Search the web..."/>
-							<button class="search-button"></button>
+							<div class="search-round-corners">
+								<div class="left-side">
+									<div class="top-left"></div>
+									<div class="middle-left"></div>
+									<div class="bottom-left"></div>
+								</div>
+								<input type="text" class="search-text" name="search-text" placeholder="Search the web..."/>
+								<div class="search-button">
+								<div class="right-side">
+									<div class="top-right"></div>
+									<div class="middle-right"></div>
+									<div class="bottom-right"></div>
+								</div>
+								</div>
+							</div><!--End of search-round-corners-->
 						</form>
 					</div>
 					
@@ -98,6 +120,8 @@
 									</ul>
 									<div></div>
 								</div>
+								<div class="right-shadow"></div>
+								<div class="bottom-shadow"> </div>
 							</div><!--End of gadget-box-->
 						</div><!--End of Column1-->
 						<div class="column2"> 
@@ -126,6 +150,8 @@
 									</ul>
 									<div></div>
 								</div>
+								<div class="right-shadow"></div>
+								<div class="bottom-shadow"> </div>
 							</div><!--End of gadget-box-->
 						</div><!--End of Column2-->
 						<div class="column3"> 
@@ -154,6 +180,8 @@
 									</ul>
 									<div></div>
 								</div>
+								<div class="right-shadow"></div>
+								<div class="bottom-shadow"> </div>
 							</div><!--End of gadget-box-->
 						</div><!--End of column3-->
 					</div><!--End of canvas-table-->
@@ -162,39 +190,44 @@
 	
 			<div id="footer">
 				<label class="TW">ThoughtWorks Inc.</label>
-				<label for="checkbox" class="label">Global Offices...</label>
-				<input type="checkbox" id="checkbox" /> 
-				<div class="footer-more">
-					<ul class="footer-list">
-						<li>
-							<span>India</span>
-							<ul>
-								<li>Bangalore</li>
-								<li>Chennai</li>
-								<li>Gurgaon</li>
-								<li>Pune</li>
-							</ul>
-						</li>
-						<li>
-							<span>Australia</span>
-							<ul>
-								<li>Brisbane</li>
-								<li>Melbourne</li>
-								<li>Sydney</li>
-								<li>Perth</li>
-							</ul>
-						</li>
-						<li>
-							<span>US</span>
-							<ul>
-								<li>Atlanta</li>
-								<li>Austin</li>
-								<li>Chicago</li>
-								<li>Dallas</li>
-							</ul>
-						</li>
-					</ul>
-				</div><!--End of footer-more-->
+				<!--
+					<label for="checkbox" class="label">Global Offices...</label>
+					<input type="checkbox" id="checkbox" /> 
+				-->
+				<a href="#" class="label"> 
+					<span>Global Offices...</span>
+					<div class="footer-more">
+						<ul>
+							<li>
+								<span>India</span>
+								<ul>
+									<li>Bangalore</li>
+									<li>Chennai</li>
+									<li>Gurgaon</li>
+									<li>Pune</li>
+								</ul>
+							</li>
+							<li>
+								<span>Australia</span>
+								<ul>
+									<li>Brisbane</li>
+									<li>Melbourne</li>
+									<li>Sydney</li>
+									<li>Perth</li>
+								</ul>
+							</li>
+							<li>
+								<span>US</span>
+								<ul>
+									<li>Atlanta</li>
+									<li>Austin</li>
+									<li>Chicago</li>
+									<li>Dallas</li>
+								</ul>
+							</li>
+						</ul>
+					</div><!--End of footer-more-->
+				</a>		
 			</div><!--End of footer-->
 		</div><!--End of container-->
 	</body>

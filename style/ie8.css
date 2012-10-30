@@ -1,3 +1,24 @@
 ul.menulist li.left-menu .google-more {
 	background-position-x: 500%;
 }
+
+#header .search-text {
+	line-height: 25px;
+	margin-left: 0px;
+}
+
+.gadget-content {
+	background: #FFF url(../images/gradient.png) repeat-x 0 100%;
+}
+
+#header .search-button {
+	margin-left: -50px;
+}
+
+#header .search-round-corners .middle-left, #header .search-round-corners .top-left, #header .search-round-corners .bottom-left {
+	left: -5px;
+} 
+
+#header .search-round-corners .right-side {
+	top: -1px;
+}

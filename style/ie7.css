@@ -13,13 +13,22 @@ ul.menulist li.left-menu .google-more {
 }
 
 #header .search-button {
+	display: inline;
 	margin-left: -50px;
-	margin-top: 1px;
+	margin-top: 0px;
 }
 
 div.canvas .canvas-table>div {
 	display: inline;
 	float: left;
+}
+
+#header .search-round-corners>* {
+	float: left;
+}
+
+#header .search-round-corners .right-side {
+	top: -1px
 }
 
 .gadget-title {
@@ -37,5 +46,9 @@ div.canvas .canvas-table>div {
 .gadget-content li {
 	padding-left: 5px;
 }	
+
+#footer .footer-more {
+	margin-left: 42%;
+}
 
 

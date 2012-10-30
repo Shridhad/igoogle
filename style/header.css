@@ -95,7 +95,7 @@ div.menubar .more-menu ul li.line-break {
 
 #header .logo {
 	width: 10%;
-	min-width: 107px;
+	min-width: 135px;
 	float: left;
 }
 
@@ -146,7 +146,8 @@ div.menubar .more-menu ul li.line-break {
 }
 
 #header .search-button {
-	height: 31px;
+	display: inline-block;
+	height: 29px;
 	width: 50px;
 	margin-left: -54px;
 	position: relative;
@@ -244,9 +245,7 @@ div.menubar .more-menu ul li.line-break {
 
 /********************************  Footer  ********************************/
 
-#footer input, .footer-more {
-	display: none;
-}
+
 
 .TW {
 	font: 18px Arial, sans-serif;
@@ -254,12 +253,26 @@ div.menubar .more-menu ul li.line-break {
 	margin-right: 10px;
 }
 
-#footer .label:hover {
-	text-decoration: underline;
+#footer .label {
+	text-decoration: none;
+	color: #000;
+	cursor: default;
+}
+
+#footer .label>span {
+	padding: 5px 0px;
 	cursor: pointer;
 }
 
-#footer input:checked+div {
+#footer .label:hover>span {
+	text-decoration: underline;
+}
+
+.footer-more {
+	display: none;
+}
+
+#footer .label:hover .footer-more {
 	display: block;
 }
 
