@@ -1,23 +1,34 @@
-
-.gadget-box .bottom-shadow, .gadget-box .right-shadow {
-	position:  absolute;
-	right: -2px;
-	bottom: -2px;
-	background:  #3C3A3A;
-	display: none;
-	z-index: -1;
+.gadget-shadow {
+	position: relative;
+	padding: 0 5px 5px 0;
 }
 
-.gadget-box .right-shadow {
-	width: 2px;
-	top: 0;
+.gadget-box {
+	margin-right: 0;
+}
+
+.bottom-shadow, .right-shadow {
+	position:  absolute;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	display: none;
+}
+
+.right-shadow {
+	width: 5px;
+	top: 1px;
+	bottom: 3px;
+	background: url(../images/vr-bg.png) repeat-y top right transparent;
 }
 
 .bottom-shadow {
-	height: 2px;
+	height: 5px;
 	left: 0;
+	right:3px;
+	background: url(../images/hr-bg.png) repeat-x bottom left transparent;
 }
 
-.gadget-box:hover .bottom-shadow, .gadget-box:hover .right-shadow {
+.gadget-shadow:hover .bottom-shadow, .gadget-shadow:hover .right-shadow {
 	display: block;
 }

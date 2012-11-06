@@ -21,6 +21,7 @@ ul.menulist li.left-menu .google-more {
 div.canvas .canvas-table>div {
 	display: inline;
 	float: left;
+	padding-right: 10px;
 }
 
 #header .search-round-corners>* {
@@ -29,6 +30,13 @@ div.canvas .canvas-table>div {
 
 #header .search-round-corners .right-side {
 	top: -1px
+}
+
+.gadget-shadow:hover .gadget-title {
+	background: url(../images/title-gradient.png) repeat-x top left;
+}
+.gadget-shadow:hover .icons {
+	margin-bottom: 3px;
 }
 
 .gadget-title {

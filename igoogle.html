@@ -7,8 +7,10 @@
 		<link type="text/css" rel="stylesheet" href="style/reset.css"/>
 		<link type="text/css" rel="stylesheet" href="style/layout.css"/>
 		<link type="text/css" rel="stylesheet" href="style/header.css"/>
-		<link type="text/css" rel="stylesheet" href="style/gadgets.css"/>
+		<link type="text/css" rel="stylesheet" href="style/sidebar.css"/>
+		<link type="text/css" rel="stylesheet" href="style/widgets.css"/>
 		<link type="text/css" rel="stylesheet" href="style/responsive.css"/>
+		
 		<!--[if lte IE 8]>
 			<link type="text/css" rel="stylesheet" href="style/round-corners.css"/>
 			<link type="text/css" rel="stylesheet" href="style/shadow.css"/>
@@ -92,19 +94,24 @@
 			</div><!--End of Header-->
 
 			<div class="content">
+				<div class="sidebar">
+					<button id="add_widget"> Add </button>
+				</div>
 				<div class="canvas" class="clearfix">
 					<div class="canvas-table" class="clearfix">
-						<div class="column1"> 
-							<div class="gadget-box"> 
-								<div class="gadget-title clearfix">
+						<div id="column1"> 
+							<div class="widget-shadow">
+							<div class="widget-box"> 
+								<div class="widget-title clearfix">
+									<div class="logo"></div>
 									<h4>CSS-Tricks</h4>
 									<ul class="icons">
-										<li class="gadget-settings"><a></a>
-											<ul class="gadget-setting-list" >
+										<li class="widget-settings"><a></a>
+											<ul class="widget-setting-list" >
 												<li>Edit Setting</li>
-												<li>Delete this gadget</li>
-												<li>Share this gadget</li>
-												<li>About this gadget</li>
+												<li>Delete this widget</li>
+												<li>Share this widget</li>
+												<li>About this widget</li>
 												<li>You might also like</li>
 											</ul>
 										</li>
@@ -112,7 +119,7 @@
 										<li><a class="close"></a></li>
 									</ul>
 								</div>			
-								<div class="gadget-content">
+								<div class="widget-content">
 									<ul>
 										<li>Three Line Menu Navicon</li>
 										<li>Compass Compiling and Wordpress Theme</li>
@@ -120,21 +127,24 @@
 									</ul>
 									<div></div>
 								</div>
-								<div class="right-shadow"></div>
-								<div class="bottom-shadow"> </div>
-							</div><!--End of gadget-box-->
+							</div><!--End of widget-box-->
+							<div class="right-shadow"></div>
+							<div class="bottom-shadow"> </div>
+							</div><!--End of widget-shadow-->
 						</div><!--End of Column1-->
 						<div class="column2"> 
-							<div class="gadget-box"> 
-								<div class="gadget-title clearfix">
+							<div class="widget-shadow">
+							<div class="widget-box"> 
+								<div class="widget-title clearfix">
+									<div class="logo"></div>
 									<h4>CSS-Tricks CSS-Tricks CSS-Tricks CSS-Tricks CSS-Tricks CSS Tricks</h4>
 									<ul class="icons">
-										<li class="gadget-settings"><a></a>
-											<ul class="gadget-setting-list" >
+										<li class="widget-settings"><a></a>
+											<ul class="widget-setting-list" >
 												<li>Edit Setting</li>
-												<li>Delete this gadget</li>
-												<li>Share this gadget</li>
-												<li>About this gadget</li>
+												<li>Delete this widget</li>
+												<li>Share this widget</li>
+												<li>About this widget</li>
 												<li>You might also like</li>
 											</ul>
 										</li>
@@ -142,7 +152,7 @@
 										<li><a class="close"></a></li>
 									</ul>
 								</div>			
-								<div class="gadget-content">
+								<div class="widget-content">
 									<ul>
 										<li>Three Line Menu Navicon</li>
 										<li>Compass Compiling and Wordpress Theme Compass Compiling and Wordpress Theme</li>
@@ -150,21 +160,24 @@
 									</ul>
 									<div></div>
 								</div>
-								<div class="right-shadow"></div>
-								<div class="bottom-shadow"> </div>
-							</div><!--End of gadget-box-->
+							</div><!--End of widget-box-->
+							<div class="right-shadow"></div>
+							<div class="bottom-shadow"> </div>
+							</div><!--End of widget-shadow-->
 						</div><!--End of Column2-->
 						<div class="column3"> 
-							<div class="gadget-box"> 
-								<div class="gadget-title clearfix">
+							<div class="widget-shadow">
+							<div class="widget-box"> 
+								<div class="widget-title clearfix">
+									<div class="logo"></div>
 									<h4>CSS-Tricks</h4>
 									<ul class="icons">
-										<li class="gadget-settings"><a></a>
-											<ul class="gadget-setting-list" >
+										<li class="widget-settings"><a></a>
+											<ul class="widget-setting-list" >
 												<li>Edit Setting</li>
-												<li>Delete this gadget</li>
-												<li>Share this gadget</li>
-												<li>About this gadget</li>
+												<li>Delete this widget</li>
+												<li>Share this widget</li>
+												<li>About this widget</li>
 												<li>You might also like</li>
 											</ul>
 										</li>
@@ -172,7 +185,7 @@
 										<li><a class="close"></a></li>
 									</ul>
 								</div>			
-								<div class="gadget-content">
+								<div class="widget-content">
 									<ul>
 										<li>Three Line Menu Navicon</li>
 										<li>Compass Compiling and Wordpress Theme</li>
@@ -180,9 +193,42 @@
 									</ul>
 									<div></div>
 								</div>
+								</div><!--End of widget-box-->
 								<div class="right-shadow"></div>
 								<div class="bottom-shadow"> </div>
-							</div><!--End of gadget-box-->
+								</div><!--End of widget-shadow-->
+
+								<div class="widget-shadow">
+							<div class="widget-box"> 
+								<div class="widget-title clearfix">
+									<div class="logo"></div>
+									<h4>CSS-Tricks</h4>
+									<ul class="icons">
+										<li class="widget-settings"><a></a>
+											<ul class="widget-setting-list" >
+												<li>Edit Setting</li>
+												<li>Delete this widget</li>
+												<li>Share this widget</li>
+												<li>About this widget</li>
+												<li>You might also like</li>
+											</ul>
+										</li>
+										<li><a class="minimize"></a></li>
+										<li><a class="close"></a></li>
+									</ul>
+								</div>			
+								<div class="widget-content">
+									<ul>
+										<li>Three Line Menu Navicon</li>
+										<li>Compass Compiling and Wordpress Theme</li>
+										<li>Brackets</li>
+									</ul>
+									<div></div>
+								</div>
+							</div><!--End of widget-box-->
+							<div class="right-shadow"></div>
+							<div class="bottom-shadow"> </div>
+							</div><!--End of widget-shadow-->
 						</div><!--End of column3-->
 					</div><!--End of canvas-table-->
 				</div><!--End of canvas-->
@@ -197,7 +243,7 @@
 				<a href="#" class="label"> 
 					<span>Global Offices...</span>
 					<div class="footer-more">
-						<ul>
+						<ul class="footer-list">
 							<li>
 								<span>India</span>
 								<ul>
@@ -231,4 +277,6 @@
 			</div><!--End of footer-->
 		</div><!--End of container-->
 	</body>
+	<script type="text/javascript" src="script/script.js" >
+	</script>
 </html>
