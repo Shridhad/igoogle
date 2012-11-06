@@ -52,7 +52,7 @@
 	margin: 5px;
 	padding: 0px;
 	height: 15px;
-	display: none;
+	/*display: none;*/
 }
 
 .widget-title:hover .icons {
@@ -116,11 +116,13 @@
 
 .widget-title .minimize {
 	width: 12px;
+	height: 16px;
 	background: url(../images/result.png) 0% 41% no-repeat
 }
 
 .widget-title .close {
 	width: 15px;
+	height: 16px;
 	background: url(../images/result.png) -3% 84.70% no-repeat
 }
 
