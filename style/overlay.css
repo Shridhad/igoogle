@@ -1,0 +1,22 @@
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: black;
+	z-index: 102;
+	opacity: 0.7;
+}
+
+.widget-form {
+	position: absolute;
+	top: 30%;
+	left: 30%;
+	width: 40%;
+	height: 40%;
+	z-index: 108;
+	border: 3px solid rgb(71, 71, 255);
+	border-radius: 20px;
+	background: #9FBCD5;
+}

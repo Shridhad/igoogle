@@ -25,12 +25,14 @@
 	border-bottom: 1px solid #DCDCDC;
 	border-radius: 10px 10px 0 0;
 	cursor: move;
+	height: 25px;
 }
 
 
 .widget-title h4 {
 	margin: 5px;
 	width: 55%;
+	height: 25px;
 	float: left;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -114,16 +116,21 @@
 	background: url(../images/result.png) 0 71% no-repeat
 }
 
-.widget-title .minimize {
-	width: 12px;
+.widget-title .minimize, .close, .maximize {
+	width: 15px;
 	height: 16px;
+}
+
+.widget-title .minimize {
 	background: url(../images/result.png) 0% 41% no-repeat
 }
 
 .widget-title .close {
-	width: 15px;
-	height: 16px;
 	background: url(../images/result.png) -3% 84.70% no-repeat
+}
+
+.widget-title .maximize {
+	background: url(../images/maximize.png) 50% no-repeat
 }
 
 .widget-title .minimize:hover {
@@ -132,6 +139,10 @@
 
 .widget-title .close:hover {
 	background: #07A url(../images/close-white.png) -50%
+}
+
+.widget-title .maximize:hover {
+	background: #07A url(../images/maximize-white.png) 50% no-repeat;
 }
 
 .widget-content {
