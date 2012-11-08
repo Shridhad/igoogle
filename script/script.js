@@ -1,20 +1,3 @@
-
-var normalizeEvent = function(event) {
-    if(!event.stopPropagation) {
-        event.stopPropagation = function() { event.cancelBubble = true; };
-    }
-    if(!event.preventDefault) {
-        event.preventDefault = function() { event.returnValue = false; };
-    }
-    if(!event.stop) {
-        event.stop = function() {
-            this.stopPropagation();
-            this.preventDefault();
-        };                    
-    }
-    return event;
-};
-
 var addListener = function(node, type, handler, flag) {
     if (typeof node.addEventListener == "function") {
         node.addEventListener(type, handler, flag);
@@ -25,56 +8,49 @@ var addListener = function(node, type, handler, flag) {
 
 var registerEvent = function(node, type, handler, flag) {
     var wrappedHandler = function(event) {
-		handler(normalizeEvent(event || window.event));   
+		handler(event || window.event);   
     }
     addListener(node, type, wrappedHandler, flag);
 };
 
 var column = 0;
 
-var Widget = (function(){
+var Widget = (function(WidgetContent){
 
-	var	widget = null,
-		widgetBox =  null,
+	this.widget = null;
+	var	widgetBox =  null,
 		widgetTitleBox =  null,
 		widgetBody =  null,
-		minimize = null,
-		close = null,
-		
-		WidgetContent = {
-			title: "Widget Title",
-			body: "Widget Body"
-		},
+		minimizeButton = null,
+		closeButton = null,
 	
 		createElement = function(tag, className) {
 			var element = document.createElement(tag);
 			element.className = className;
 			return element;
-		};
-
-	return {
+		},
 		
-		createWidgetSettingList : function() {
+		createWidgetSettingList = function() {
 			var list = createElement("ul", "widget-setting-list");
 			list.innerHTML = "<li>Edit Setting</li><li>Delete this widget</li><li>Share this widget</li><li>About this wdget</li><li>You might also like</li>";
 			return list;
 		},
 
-		createWidgetTitleIcons : function() {
+		createWidgetTitleIcons = function() {
 			var icons = createElement("ul", "icons");
 			var widgetSettings = createElement("li", "widget-settings");
 			widgetSettings.innerHTML = "<a></a>"
-			widgetSettings.appendChild(this.createWidgetSettingList());
-			minimize = createElement("li", "minimize");
-			close = createElement("li", "close");
+			widgetSettings.appendChild(createWidgetSettingList());
+			minimizeButton = createElement("li", "minimize");
+			closeButton = createElement("li", "close");
 			icons.appendChild(widgetSettings);
-			icons.appendChild(minimize);
-			icons.appendChild(close);
+			icons.appendChild(minimizeButton);
+			icons.appendChild(closeButton);
 
 			return icons;
 		},
 
-		createWidgetTitle : function(widget_title) {
+		createWidgetTitle = function(widget_title) {
 			var logo = createElement("div", "logo");
 			
 			var title = document.createElement("h4");
@@ -83,59 +59,126 @@ var Widget = (function(){
 			widgetTitleBox = createElement("div", "widget-title clearfix");
 			widgetTitleBox.appendChild(logo);
 			widgetTitleBox.appendChild(title);
-			widgetTitleBox.appendChild(this.createWidgetTitleIcons());
+			widgetTitleBox.appendChild(createWidgetTitleIcons());
 		},
 
-		createWidgetBody : function(widget_body) {
+		createWidgetBody = function(widget_body) {
 			widgetBody = createElement("div", "widget-content");
 			widgetBody.innerHTML = widget_body;
 		},
 
-		createWidgetBox : function(WidgetContent) {
+		createWidgetBox = function(WidgetContent) {
 			widgetBox = createElement("div", "widget-box");
-			this.createWidgetTitle(WidgetContent.title);
-			this.createWidgetBody(WidgetContent.body);
+			createWidgetTitle(WidgetContent.title);
+			createWidgetBody(WidgetContent.content);
 			widgetBox.appendChild(widgetTitleBox);
 			widgetBox.appendChild(widgetBody);
 			return widgetBox;
-		},
+		};
 
-		addEvents : function() {
-			registerEvent(minimize, "click", function(){
-				var className = minimize.attributes["class"].value;
+		this.addEvents = function() {
+			var me = this;
+			registerEvent(minimizeButton, "click", function(){
+				var className = minimizeButton.attributes["class"].value;
 				if(className == "minimize") {
-					widgetBody.style.display = "none";
-					minimize.className = "maximize";
+					me.minimize();
 				}
 				else {
-					widgetBody.style.display = "block";
-					minimize.className = "minimize";
+					me.maximize();	
 				}
 			}, false);
-			registerEvent(close, "click", function(){
-				widget.parentNode.removeChild(widget);
+			registerEvent(closeButton, "click", function(){
+				me.close();
 			}, false);
-		},
+		};
 
-		createWidget : function() {
-			widget = createElement("div", "widget-shadow");
-			widget.appendChild(this.createWidgetBox(WidgetContent));
-			return widget;
-		},
-
-		addWidget : function() {
-			var col = "column" + ((column++)%3+1);
-			document.getElementById(col).appendChild(this.createWidget());
+		this.createWidget = function() {
+			this.widget = createElement("div", "widget-shadow");
+			this.widget.appendChild(createWidgetBox(WidgetContent));
 			this.addEvents();
-		}
-	};
+		};
+
+		this.minimize = function() {
+			widgetBody.style.display = "none";
+			minimizeButton.className = "maximize";	
+		};
+
+		this.maximize = function() {
+			widgetBody.style.display = "block";
+			minimizeButton.className = "minimize";
+		};
+
+		this.close = function() {
+			this.widget.parentNode.removeChild(this.widget);
+		};
+
+		this.createWidget();
 });
 
+var WidgetAgent = (function() {
+
+	var createButton = null,
+		cancelButton = null,
+		overlay = null,
+		dialog = null,
+		column = null,
+
+		WidgetContent = { };
+
+	close = function() {
+		dialog.style.display = "none";
+		overlay.style.display = "none";
+	},
+
+	getWidgetData = function() {
+		WidgetContent.title = document.getElementById("widget-title").value;
+		WidgetContent.content = document.getElementById("widget-body").value;
+		var select = document.getElementById("column");
+		column = select.options[select.selectedIndex].value;
+	},
+
+	addEvents = function(){
+		registerEvent(createButton, "click", function() {
+			console.log("Created");
+			addWidget();
+			close();
+		}, false);
+
+		registerEvent(cancelButton, "click", function() {
+			console.log("Cancel");
+			close();
+		}, false);
+	},
+
+	prepare = function() {
+		overlay = document.getElementById("overlay");
+		dialog = document.getElementById("widget-dialog");
+		createButton = document.getElementById("create_widget");
+		cancelButton = document.getElementById("cancel");
+		addEvents();
+	},
+
+	addWidget = function() {
+		getWidgetData();
+		var w = new Widget(WidgetContent);
+		document.getElementById(column).appendChild(w.widget);
+	};
+
+	this.showWidgetDialog = function() {
+		overlay.style.display = "block";
+		dialog.style.display = "block";
+	}
+
+	prepare();
+});
+
+
+
 window.onload = function() {
+	var wa = new WidgetAgent();
 	var addButton = document.getElementById("add_widget");
-	registerEvent(addButton, "click", function(){
-		var w = new Widget();
-		w.addWidget();
-		//Widget.addWidget();
+	registerEvent(addButton, "click", function() {
+		console.log("Add Button");
+		wa.showWidgetDialog();
 	}, false);
-}
+};

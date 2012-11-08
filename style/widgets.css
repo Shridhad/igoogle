@@ -35,6 +35,7 @@
 	height: 25px;
 	float: left;
 	overflow: hidden;
+	text-transform: capitalize;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
@@ -147,7 +148,7 @@
 
 .widget-content {
 	border-radius: 0 0 10px 10px;
-	padding: 13px 0 0;
+	padding: 13px 5px 5px;
 	background: #FFF; 
 	background: -moz-linear-gradient(top, #FFF 70%, #CDE5FC 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(70%,#FFF), color-stop(100%,#CDE5FC));

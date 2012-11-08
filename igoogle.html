@@ -152,10 +152,10 @@
 				</a>		
 			</div><!--End of footer-->
 		</div><!--End of container-->
-		<div class="overlay"></div>
-		<div class="widget-dialog">
+		<div class="overlay" id="overlay"></div>
+		<div class="widget-dialog" id="widget-dialog">
 			<h1> New Widget </h1>
-			<form name="widget-form" class="widget-form">
+			<div name="widget-form" class="widget-form">
 				<div>
 						<label for="widget-title">Title:</label>
 						<input type="text" id="widget-title"></input>
@@ -173,10 +173,10 @@
 						</select>
 				</div>
 				<div class="buttons">
-					<button>Create Widget</button>
-					<button>Cancel</button>
+					<button id="create_widget">Create Widget</button>
+					<button id="cancel">Cancel</button>
 				</div>
-			</form>
+			</div>
 		</div>
 	</body>
 	<script type="text/javascript" src="script/script.js">
