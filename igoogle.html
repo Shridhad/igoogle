@@ -153,7 +153,31 @@
 			</div><!--End of footer-->
 		</div><!--End of container-->
 		<div class="overlay"></div>
-		<div class="widget-form"></div>
+		<div class="widget-dialog">
+			<h1> New Widget </h1>
+			<form name="widget-form" class="widget-form">
+				<div>
+						<label for="widget-title">Title:</label>
+						<input type="text" id="widget-title"></input>
+				</div>
+				<div>
+						<label for="widget-body">Body Content:</label>
+						<textarea id="widget-body" rows="5"></textarea>
+				</div>
+				<div>
+						<label for="column">Select Column:</label>
+						<select id="column">
+							<option value="column1">Column 1</option>
+							<option value="column2">Column 2</option>
+							<option value="column3">Column 3</option>
+						</select>
+				</div>
+				<div class="buttons">
+					<button>Create Widget</button>
+					<button>Cancel</button>
+				</div>
+			</form>
+		</div>
 	</body>
 	<script type="text/javascript" src="script/script.js">
 	</script>
