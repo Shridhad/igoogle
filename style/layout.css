@@ -54,7 +54,11 @@ div.canvas {
 
 div.sidebar {
 	float: left;
-	padding: 5px;
+	padding: 10px;
+	padding-left: 5px;
+	margin-right: 10px;
+	border-right: 1px solid white;
+	border-radius: 10px;
 }
 
 div.canvas .canvas-table>div {

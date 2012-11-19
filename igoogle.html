@@ -97,6 +97,8 @@
 			<div class="content">
 				<div class="sidebar">
 					<button id="add_widget">Add</button>
+					<button id="min_max" class="minAll">v</button>
+					<button id="close_all" class="closeAll">x</button>
 				</div>
 				<div class="canvas" class="clearfix">
 					<div class="canvas-table" class="clearfix">
@@ -153,16 +155,16 @@
 			</div><!--End of footer-->
 		</div><!--End of container-->
 		<div class="overlay" id="overlay"></div>
-		<div class="widget-dialog" id="widget-dialog">
+		<div class="widget-dialog" id="widget_dialog">
 			<h1> New Widget </h1>
 			<div name="widget-form" class="widget-form">
 				<div>
 						<label for="widget-title">Title:</label>
-						<input type="text" id="widget-title"></input>
+						<input type="text" id="widget_title"></input>
 				</div>
 				<div>
-						<label for="widget-body">Body Content:</label>
-						<textarea id="widget-body" rows="5"></textarea>
+						<label for="widget_body">Body Content:</label>
+						<textarea id="widget_body" rows="5"></textarea>
 				</div>
 				<div>
 						<label for="column">Select Column:</label>
@@ -179,6 +181,14 @@
 			</div>
 		</div>
 	</body>
+	<script type="text/javascript" src="script/util.js">
+	</script>
+	<script type="text/javascript" src="script/widget.js">
+	</script>
+	<script type="text/javascript" src="script/widgetAgent.js">
+	</script>
+	<script type="text/javascript" src="script/widgetManager.js">
+	</script>
 	<script type="text/javascript" src="script/script.js">
 	</script>
 </html>

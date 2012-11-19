@@ -1,3 +1,18 @@
-.sidebar #add_widget {
+.sidebar button {
 	padding: 5px 15px;
+	margin: 2px 0;
+	width: 55px;
+	height: 23px;
+	display: block;
+}
+.sidebar .minAll {
+	display: none;
+}
+
+.sidebar .maxAll {
+	
+}
+
+.sidebar .closeAll {
+	display: none;
 }
