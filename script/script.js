@@ -1,4 +1,3 @@
-
 var restoreWidgets = function() {
 		var cookies = unescape(unescape(Cookies.readCookie("widgets"))).split("}");
 		if(cookies == "")
@@ -31,4 +30,3 @@ window.onload = function() {
 	var addButton = document.getElementById("add_widget");
 	registerEvent(addButton, "click", WidgetAgent.showWidgetDialog);
 };
-

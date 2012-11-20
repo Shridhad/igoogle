@@ -100,7 +100,6 @@ var Widget = function(WidgetContent){
 			}
 		}
 		me.widget = null;
-		console.log(widgets.length);
 	};
 	this.createWidget();
 };
