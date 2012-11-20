@@ -1,5 +1,5 @@
 var addListener = function(node, type, handler, flag) {
-    if (typeof node.addEventListener == "function") {
+    if (typeof node.addEventListener === "function") {
         node.addEventListener(type, handler, flag);
         return;
     }

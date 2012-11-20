@@ -8,7 +8,7 @@ var WidgetManager = (function() {
 			close_all = document.getElementById("close_all");
 
 			registerEvent(min_max, "click", minMaxAll);
-			registerEvent(close_all, "click", instance.closeAll);
+			registerEvent(close_all, "click", instance.removeAll);
 		},
 
 		minMaxAll = function() {
@@ -24,7 +24,7 @@ var WidgetManager = (function() {
 	function init() {
 		return {
 			minimizeAll : function() {
-				for (var i = 0; i < widgets.length; i++) {
+				for (var i=0, len=widgets.length; i<len; i++) {
 					widgets[i].minimize();
 				};
 				min_max.className = "maxAll";
@@ -32,19 +32,14 @@ var WidgetManager = (function() {
 			},
 
 			maximizeAll : function() {
-				for (var i = 0; i < widgets.length; i++) {
+				for (var i=0, len=widgets.length; i<len; i++) {
 					widgets[i].maximize();
 				};
 				min_max.className = "minAll";
 				min_max.innerHTML = "v";
 			},
 
-			closeAll : function() {
-				for (var i = widgets.length-1; i >= 0; i--) {
-					if(widgets[i].widget != null)
-						widgets[i].closeWidget();
-					widgets.splice(i, 1);
-				}
+			hideButtons : function() {
 				min_max.style.display = "none";
 				close_all.style.display = "none";
 			},
@@ -52,7 +47,17 @@ var WidgetManager = (function() {
 			showButtons : function() {
 				min_max.style.display = "block";
 				close_all.style.display = "block";
-			}
+			},
+
+			removeAll : function() {
+				for (var i=widgets.length-1; i>=0; i--) {
+					if(widgets[i].widget != null)
+						widgets[i].removeWidget();
+					widgets.splice(i, 1);
+					Cookies.deleteCookie("widget"+(i+1));
+				}
+				instance.hideButtons();
+			}	
 		}
 	};
 

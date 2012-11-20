@@ -7,7 +7,11 @@ var WidgetAgent = (function() {
 		WAdialog = null,
 		column = null,
 
-		WidgetContent = { },
+		WidgetContent = { 
+			toString : function() {
+				return "title:" + this.title + ",content:" + this.content;
+			}
+		},
 
 	closeWA = function() {
 		WAdialog.style.display = "none";
@@ -38,6 +42,7 @@ var WidgetAgent = (function() {
 		widgets.push(w);
 		document.getElementById(column).appendChild(w.widget);
 		wm.showButtons();
+		createCookie(widgets.length, WidgetContent);
 	},
 
 	prepare = function() {
