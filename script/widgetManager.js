@@ -8,7 +8,7 @@ var WidgetManager = (function() {
 			close_all = document.getElementById("close_all");
 
 			registerEvent(min_max, "click", minMaxAll);
-			registerEvent(close_all, "click", instance.closeAll);
+			registerEvent(close_all, "click", instance.removeAll);
 		},
 
 		minMaxAll = function() {
@@ -39,12 +39,7 @@ var WidgetManager = (function() {
 				min_max.innerHTML = "v";
 			},
 
-			closeAll : function() {
-				for (var i = widgets.length-1; i >= 0; i--) {
-					if(widgets[i].widget != null)
-						widgets[i].closeWidget();
-					widgets.splice(i, 1);
-				}
+			hideButtons : function() {
 				min_max.style.display = "none";
 				close_all.style.display = "none";
 			},
@@ -52,7 +47,16 @@ var WidgetManager = (function() {
 			showButtons : function() {
 				min_max.style.display = "block";
 				close_all.style.display = "block";
-			}
+			},
+
+			removeAll : function() {
+				for (var i = widgets.length-1; i >= 0; i--) {
+					if(widgets[i].widget != null)
+						widgets[i].removeWidget();
+					widgets.splice(i, 1);
+				}
+				instance.hideButtons();
+			}	
 		}
 	};
 

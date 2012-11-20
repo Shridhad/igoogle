@@ -38,6 +38,7 @@ var WidgetAgent = (function() {
 		widgets.push(w);
 		document.getElementById(column).appendChild(w.widget);
 		wm.showButtons();
+		createCookie(widgets.length);
 	},
 
 	prepare = function() {

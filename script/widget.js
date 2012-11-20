@@ -62,7 +62,7 @@ var Widget = function(WidgetContent){
 		},
 
 		addEvents = function() {
-			registerEvent(minimizeButton, "click", function(){
+			var minMaxWidget = function(){
 				var className = minimizeButton.attributes["class"].value;
 				if(className == "minimize") {
 					me.minimize();
@@ -70,32 +70,33 @@ var Widget = function(WidgetContent){
 				else {
 					me.maximize();	
 				}
-			});
-			registerEvent(closeButton, "click", function(){
-				me.closeWidget();
-			});
+			};
+
+			registerEvent(minimizeButton, "click", minMaxWidget);
+			registerEvent(closeButton, "click", me.removeWidget);
 		};
 
-		this.createWidget = function() {
-			this.widget = createElement("div", "widget-shadow");
-			this.widget.appendChild(createWidgetBox(WidgetContent));
-			addEvents();
-		};
+	this.createWidget = function() {
+		this.widget = createElement("div", "widget-shadow");
+		this.widget.appendChild(createWidgetBox(WidgetContent));
+		addEvents();
+	};
 
-		this.minimize = function() {
-			widgetBody.style.display = "none";
-			minimizeButton.className = "maximize";	
-		};
+	this.minimize = function() {
+		widgetBody.style.display = "none";
+		minimizeButton.className = "maximize";	
+	};
 
-		this.maximize = function() {
-			widgetBody.style.display = "block";
-			minimizeButton.className = "minimize";
-		};
+	this.maximize = function() {
+		widgetBody.style.display = "block";
+		minimizeButton.className = "minimize";
+	};
 
-		this.closeWidget = function() {
-			this.widget.parentNode.removeChild(this.widget);
-			this.widget = null;
-		};
-		this.createWidget();
+	this.removeWidget = function() {
+		me.widget.parentNode.removeChild(me.widget);
+		me.widget = null;
+	};
+	this.createWidget();
 };
+
 
