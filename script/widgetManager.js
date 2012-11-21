@@ -53,8 +53,6 @@ var WidgetManager = (function() {
 				for (var i=widgets.length-1; i>=0; i--) {
 					if(widgets[i].widget != null)
 						widgets[i].removeWidget();
-					widgets.splice(i, 1);
-					Cookies.deleteCookie("widget"+(i+1));
 				}
 				instance.hideButtons();
 			}	

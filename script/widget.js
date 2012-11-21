@@ -1,6 +1,7 @@
 var Widget = function(WidgetContent){
 
 	this.widget = null;
+	this.WidgetContent = WidgetContent;
 
 	var	widgetBox =  null,
 		widgetTitleBox =  null,
@@ -96,10 +97,15 @@ var Widget = function(WidgetContent){
 		me.widget.parentNode.removeChild(me.widget);
 		for(i=0, len=widgets.length; i<len; i++){
 			if(widgets[i] === me){
-				deleteCookie(me);
+				widgets.splice(i,1);
+				break;
 			}
 		}
-		me.widget = null;
+		deleteCookie();
+	};
+
+	this.WidgetContent.toString = function() {
+		return "title:" + this.title + ",content:" + this.content;
 	};
 	this.createWidget();
 };

@@ -10,7 +10,6 @@ var Cookies = (function() {
 				var expires = ";"
 			}
 			path = path || '/';
-			console.log(name);
 			document.cookie = name + "=" + value + expires + "; path=" + path;
 		},
 
