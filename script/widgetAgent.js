@@ -13,14 +13,31 @@ var WidgetAgent = (function() {
 			}
 		},
 
+		AJAX = (function(){
+			var getData =function(url) {
+				var xmlHttp = getXMLHttpRequestObject();
+				xmlHttp.open("GET", url, false);
+				xmlHttp.send(null);
+				return xmlHttp.responseText;
+			};
+			return {
+				getTitle : function() {
+					return getData("data/title.txt");
+				},
+				getContent : function() {
+					return getData("data/content.txt");
+				}
+			};
+		})();
+
 	closeWA = function() {
 		WAdialog.style.display = "none";
 		overlayDialog.style.display = "none";
 	},
 
 	getWidgetData = function() {
-		WidgetContent.title = document.getElementById("widget_title").value;
-		WidgetContent.content = document.getElementById("widget_body").value;
+		WidgetContent.title = document.getElementById("widget_title").value || AJAX.getTitle();
+		WidgetContent.content = document.getElementById("widget_body").value || AJAX.getContent();
 		var select = document.getElementById("column");
 		column = select.options[select.selectedIndex].value;
 	},
@@ -59,5 +76,4 @@ var WidgetAgent = (function() {
 			WAdialog.style.display = "block";
 		}
 	};
-
 })();

@@ -32,7 +32,7 @@ var restoreWidgets = function() {
 		for(var i=0, len=widgets.length; i<len; i++){
 			createCookie(widgets[i].WidgetContent);
 		}
-	}
+	};
 
 window.onload = function() {
 	wm = WidgetManager.getInstance();
