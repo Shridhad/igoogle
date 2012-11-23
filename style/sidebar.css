@@ -1,9 +1,10 @@
 .sidebar button {
-	padding: 5px 15px;
+	padding: 5px 10px;
 	margin: 2px 0;
 	width: 55px;
-	height: 23px;
+	height: 27px;
 	display: block;
+	font: 16px/20px Arial, sans-serif;
 }
 .sidebar .minAll {
 	display: none;
