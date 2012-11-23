@@ -53,6 +53,7 @@
 .widget-title .icons {
 	float: right;
 	margin: 5px;
+	margin-left: 0;
 	padding: 0px;
 	height: 15px;
 	/*display: none;*/

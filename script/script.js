@@ -6,8 +6,8 @@ var restoreWidgets = function() {
 			var WidgetContent = getWidgetContent(cookies[i].substring(1, cookies[i].length));
 			var w = new Widget(WidgetContent);
 			widgets.push(w);
-			var column = "column" + ((i%3)+1);
-			document.getElementById(column).appendChild(w.widget);
+			var column = "#column" + ((i%3)+1);
+			$(column).append(w.widget);
 		}
 		wm.showButtons();
 	},
@@ -34,9 +34,8 @@ var restoreWidgets = function() {
 		}
 	};
 
-window.onload = function() {
+$(document).ready(function() {
 	wm = WidgetManager.getInstance();
 	restoreWidgets();
-	var addButton = document.getElementById("add_widget");
-	registerEvent(addButton, "click", WidgetAgent.showWidgetDialog);
-};
+	$('#add_widget').click(WidgetAgent.showWidgetDialog);
+});

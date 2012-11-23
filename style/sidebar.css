@@ -6,14 +6,7 @@
 	display: block;
 	font: 16px/20px Arial, sans-serif;
 }
-.sidebar .minAll {
-	display: none;
-}
 
-.sidebar .maxAll {
-	
-}
-
-.sidebar .closeAll {
+.sidebar .minAll, .sidebar .closeAll {
 	display: none;
 }

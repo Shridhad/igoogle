@@ -1,52 +1,51 @@
 var WidgetManager = (function() {
 	var instance,
-		min_max,
-		close_all,
+		$min_max,
+		$close_all,
 
-		addEvents = function() {
-			min_max = document.getElementById("min_max"),
-			close_all = document.getElementById("close_all");
+	addEvents = function() {
+		$min_max = $($('#min_max').get(0));
+		$close_all = $($('#close_all').get(0));
 
-			registerEvent(min_max, "click", minMaxAll);
-			registerEvent(close_all, "click", instance.removeAll);
-		},
+		$min_max.click(minMaxAll);
+		$close_all.click(instance.removeAll);
+	},
 
-		minMaxAll = function() {
-			var className = min_max.attributes["class"].value;
-				if(className == "minAll") {
-					instance.minimizeAll();
-				}
-				else {
-					instance.maximizeAll();	
-				}
+	minMaxAll = function() {
+		if($min_max.attr('class') === "minAll") {
+			instance.minimizeAll();
 		}
+		else {
+			instance.maximizeAll();	
+		}
+	},
 
-	function init() {
+	init = function() {
 		return {
 			minimizeAll : function() {
 				for (var i=0, len=widgets.length; i<len; i++) {
 					widgets[i].minimize();
 				};
-				min_max.className = "maxAll";
-				min_max.innerHTML = "^";
+				$min_max.removeClass().addClass('maxAll');
+				$min_max.text('^');
 			},
 
 			maximizeAll : function() {
 				for (var i=0, len=widgets.length; i<len; i++) {
 					widgets[i].maximize();
 				};
-				min_max.className = "minAll";
-				min_max.innerHTML = "v";
+				$min_max.removeClass().addClass('minAll');
+				$min_max.text('v');
 			},
 
 			hideButtons : function() {
-				min_max.style.display = "none";
-				close_all.style.display = "none";
+				$min_max.hide();
+				$close_all.hide();
 			},
 
 			showButtons : function() {
-				min_max.style.display = "block";
-				close_all.style.display = "block";
+				$min_max.css('display', 'block');
+				$close_all.css('display', 'block');
 			},
 
 			removeAll : function() {
@@ -56,7 +55,7 @@ var WidgetManager = (function() {
 				}
 				instance.hideButtons();
 			}	
-		}
+		};
 	};
 
 	return {

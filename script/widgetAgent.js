@@ -1,10 +1,10 @@
 var widgets = [];
 var WidgetAgent = (function() {
 
-	var createButton = null,
-		cancelButton = null,
-		overlayDialog = null,
-		WAdialog = null,
+	var $createButton = null,
+		$cancelButton = null,
+		$overlayDialog = null,
+		$WAdialog = null,
 		column = null,
 
 		WidgetContent = { 
@@ -31,24 +31,22 @@ var WidgetAgent = (function() {
 		})();
 
 	closeWA = function() {
-		WAdialog.style.display = "none";
-		overlayDialog.style.display = "none";
+		$WAdialog.hide();
+		$overlayDialog.hide();
 	},
 
 	getWidgetData = function() {
-		WidgetContent.title = document.getElementById("widget_title").value || AJAX.getTitle();
-		WidgetContent.content = document.getElementById("widget_body").value || AJAX.getContent();
-		var select = document.getElementById("column");
-		column = select.options[select.selectedIndex].value;
+		WidgetContent.title = $('#widget_title').val() || AJAX.getTitle();
+		WidgetContent.content = $('#widget_body').val() || AJAX.getContent();
+		column = $('#column option:selected').attr('value');
 	},
 
 	addEvents = function(){
-		registerEvent(createButton, "click", function() {
+		$createButton.click(function() {
 			addWidget();
 			closeWA();
 		});
-
-		registerEvent(cancelButton, "click", function() {
+		$cancelButton.click(function() {
 			closeWA();
 		});
 	},
@@ -57,23 +55,26 @@ var WidgetAgent = (function() {
 		getWidgetData();
 		var w = new Widget(WidgetContent);
 		widgets.push(w);
-		document.getElementById(column).appendChild(w.widget);
+		$('#'+column).append(w.widget);
 		wm.showButtons();
 		createCookie(WidgetContent);
 	},
 
 	prepare = function() {
-		overlayDialog = document.getElementById("overlay");
-		WAdialog = document.getElementById("widget_dialog");
-		createButton = document.getElementById("create_widget");
-		cancelButton = document.getElementById("cancel");
+		var getElement = function(id) {
+			return $($('#'+id).get(0)); 
+		};
+		$overlayDialog = getElement('overlay');
+		$WAdialog = getElement('widget_dialog')
+		$createButton = getElement('create_widget');
+		$cancelButton = getElement('cancel');
 		addEvents();
 	}();
 
 	return {
 		showWidgetDialog : function() {
-			overlayDialog.style.display = "block";
-			WAdialog.style.display = "block";
+			$overlayDialog.show();
+			$WAdialog.show();
 		}
 	};
 })();
